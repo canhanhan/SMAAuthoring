@@ -11,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Windows;
 
 namespace SMA.ISEAddon.ViewModels
 {
@@ -123,14 +124,14 @@ namespace SMA.ISEAddon.ViewModels
 
         public void RefreshRunbooks()
         {
-#if RELEASE
+#if !DEBUG
             try
             {
 #endif
             Connect();
             Runbooks = api.Runbooks.ToArray().Select(x => new RunbookDefinition { Id = x.RunbookID, Name = x.RunbookName }).ToArray();            
             AppendOutput("#### Runbook list loaded ####");
-#if RELEASE
+#if !DEBUG
             }
             catch (Exception ex)
             {
@@ -142,7 +143,7 @@ namespace SMA.ISEAddon.ViewModels
 
         public void OpenRunbook()
         {
-#if RELEASE
+#if !DEBUG
             try
             {
 #endif
@@ -185,7 +186,7 @@ namespace SMA.ISEAddon.ViewModels
             File.WriteAllText(tempFile, content);            
 
             View.Open(tempFile);
-#if RELEASE
+#if !DEBUG
             }
             catch (Exception ex)
             {
@@ -196,7 +197,7 @@ namespace SMA.ISEAddon.ViewModels
 
         public void TestRunbook()
         {
-#if RELEASE 
+#if !DEBUG 
             try
             {
 #endif
@@ -262,7 +263,7 @@ namespace SMA.ISEAddon.ViewModels
 
             var message = string.Format("#### Started: {0} - Finished: {1} - Status: {2} - Errors: {5} ####\r\nError: {4}\r\nOutput: {3}\r\n########\r\n", job.StartTime, job.EndTime, job.JobStatus, output, exception, errors);
             AppendOutput(message);
-#if RELEASE 
+#if !DEBUG 
                 }
                 catch (Exception ex)
                 {
@@ -274,7 +275,7 @@ namespace SMA.ISEAddon.ViewModels
 
         public void PublishRunbook()
         {
-#if RELEASE
+#if !DEBUG
             try
             {
 #endif
@@ -289,7 +290,7 @@ namespace SMA.ISEAddon.ViewModels
             runbook.Publish(api);
 
             AppendOutput("#### Published ####");
-#if RELEASE
+#if !DEBUG
             }
             catch (Exception ex)
             {
@@ -307,6 +308,7 @@ namespace SMA.ISEAddon.ViewModels
             Settings.Default.Save();
 
             api = new OrchestratorApi(new Uri(WebService));
+            ((DataServiceContext)api).Timeout = 10;  
             ((DataServiceContext)api).Credentials = System.Net.CredentialCache.DefaultCredentials;
             api.MergeOption = MergeOption.OverwriteChanges;
 
