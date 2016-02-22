@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMA.ISEAddon", "SMA.ISEAddon\SMA.ISEAddon.csproj", "{0FA47C98-90CF-462D-A660-3151349D23D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMA.ISEAddon.TestRunner", "SMA.ISEAddon.TestRunner\SMA.ISEAddon.TestRunner.csproj", "{631B2802-5773-47EC-9E9A-979749B4E17A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FA47C98-90CF-462D-A660-3151349D23D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FA47C98-90CF-462D-A660-3151349D23D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FA47C98-90CF-462D-A660-3151349D23D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FA47C98-90CF-462D-A660-3151349D23D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{631B2802-5773-47EC-9E9A-979749B4E17A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{631B2802-5773-47EC-9E9A-979749B4E17A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{631B2802-5773-47EC-9E9A-979749B4E17A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{631B2802-5773-47EC-9E9A-979749B4E17A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
