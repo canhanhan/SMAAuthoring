@@ -9,13 +9,13 @@ The Powershell ISE add-on provides a vertical menu to testing and publish SMA ru
 ### Manual
   1. Copy SMAAuthoring folder to Powershell Modules folder (either of following): 
     * C:\Windows\System32\WindowsPowerShell\v1.0\Modules
-    * C:\Users\<username>\Documents\WindowsPowershell\Modules
+    * C:\Users\username\Documents\WindowsPowershell\Modules
   
   2. Edit the ISE profile (Microsoft.PowerShellISE_profile.ps1) to import the module during each launch:
     - Import-Module SMAAuthoring
   
 ## First Run
- * Fill-in your SMA web service URL to the textbox (i.e.: https://<hostname>:9090/00000000-0000-0000-0000-000000000000) ![webserviceuri](https://cloud.githubusercontent.com/assets/46500/13207974/0540ffb6-d8da-11e5-902a-643ba95e06b2.png)
+ * Fill-in your SMA web service URL to the textbox (i.e.: https://hostname:9090/00000000-0000-0000-0000-000000000000) ![webserviceuri](https://cloud.githubusercontent.com/assets/46500/13207974/0540ffb6-d8da-11e5-902a-643ba95e06b2.png)
 
 ## Test
  * Clicking to Test button will update draft of existing runbook and trigger a Test run.
