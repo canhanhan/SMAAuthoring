@@ -20,7 +20,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid HorizontalAlignment="Left" VerticalAlignment="Top" />
-        <TextBox Name="WebServiceUri" Text="{Binding Path=WebService,Mode=TwoWay}" IsReadOnly="{Binding IsConnected}" />
+        <TextBox Name="WebServiceUri" Text="{Binding Path=WebService,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsReadOnly="{Binding IsConnected}" />
         <ComboBox Grid.Row="1" Name="RunbooksCombobox" ItemsSource="{Binding Runbooks}" SelectedItem="{Binding Path=ActiveRunbook,Mode=TwoWay}" DropDownOpened="RunbooksCombobox_DropDownOpened" >
             <ComboBox.ItemTemplate>
                 <DataTemplate>
